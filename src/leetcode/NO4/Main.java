@@ -52,15 +52,16 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] a = new int[2];
-        int[] b = new int[2];
-
-        a[0] = 1;
-        a[1] = 2;
-        b[0] = 3;
-        b[1] = 4;
-        double n = leetcode.NO4.Main.findCenter(a, b);
-
+//        int[] a = new int[2];
+//        int[] b = new int[2];
+//
+//        a[0] = 1;
+//        a[1] = 2;
+//        b[0] = 3;
+//        b[1] = 4;
+//        double n = leetcode.NO4.Main.findCenter(a, b);
+        long x = System.currentTimeMillis();
+        System.out.println(x);
         return;
     }
 }
