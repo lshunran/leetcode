@@ -5,12 +5,17 @@ import java.util.List;
 
 public class Main {
     public List<Integer> findDuplicates(int[] nums) {
-        nums.
         List<Integer> result = new ArrayList<>();
+
         for (int i = 0; i < nums.length; i++) {
-            if(!result.contains(nums[i])){
-                result.
+            int num = Math.abs(nums[i]);
+            if(nums[num - 1] > 0){
+                nums[num - 1] *= -1;
+            }else{
+                result.add(num);
             }
         }
+
+        return result;
     }
 }
