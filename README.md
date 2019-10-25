@@ -1,2 +1,1 @@
-# Fighting
-Fighting!!!
+学算法，撸leetcode！！！
