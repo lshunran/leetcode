@@ -40,13 +40,13 @@ public class Sort {
         return nums;
     }
 
-    public static int[] select(int[] nums) {
+    public static int[] select(int[] nums) {//归并排序
         Sort.select_sort(nums, 0, nums.length - 1);
 
         return nums;
     }
 
-    private static void select_sort(int[] nums, int p, int r) {
+    private static void select_sort(int[] nums, int p, int r) {//归并排序
         if(p >= r) return;
         int q = (p + r) / 2;
         select_sort(nums, p, q);
@@ -118,9 +118,42 @@ public class Sort {
         return i;
     }
 
+    public static int[] couuntingSort(int[] nums) {
+        int n = nums.length;
+        int max = nums[0];
+        for (int i = 0; i < n; i++) {
+            if(nums[i] > max){
+                max = nums[i];
+            }
+        }
+
+        int[] c = new int[max + 1];
+        for (int i = 0; i < max; i++) {
+            c[i] = 0;
+        }
+
+        for (int i = 0; i < n; i++) {
+            c[nums[i]]++;
+        }
+
+        for (int i = 1; i <= max; i++) {
+            c[i] = c[i] + c[i-1];
+        }
+
+        int[] tmp = new int[n];
+        for (int i = n - 1; i >= 0; i--) {
+            tmp[--c[nums[i]]] = nums[i];
+        }
+
+        for (int i = 0; i < n; i++) {
+            nums[i] = tmp[i];
+        }
+        return nums;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {5,1,1,2,0,4};
-        nums = Sort.quick(nums);
+        int[] nums = {5,1,1,2,0,4,4,2,5};
+        nums = Sort.couuntingSort(nums);
         for (int i = 0; i < nums.length; i++) {
             System.out.println(nums[i]);
 
