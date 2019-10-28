@@ -1,5 +1,8 @@
 package leetcode.NO9;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+
 public class Main {
     public static boolean isPalindrome(int x) {
         String s = String.valueOf(x);
@@ -30,4 +33,5 @@ public class Main {
         int t = 1;
         System.out.println(Main.isPalindrome(t));
     }
+
 }
