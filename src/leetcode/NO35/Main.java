@@ -11,7 +11,7 @@ public class Main {
 
         int mid = 0;
         while(low <= high){
-             mid = high - ((high - low) >> 2);
+             mid = high - ((high - low) >> 1);
 
             if(nums[mid] < target){
                 low = mid + 1;
